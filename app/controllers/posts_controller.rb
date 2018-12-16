@@ -39,7 +39,7 @@ class PostsController < ApplicationController
     @group = Group.find(params[:group_id])
     @post = Post.find(params[:id])
 
-    if current_user =! @post.user
+    if current_user != @post.user
       redirect_to root_path, alert: "You have no permission"
     end
   end
